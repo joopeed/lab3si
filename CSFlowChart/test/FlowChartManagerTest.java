@@ -15,7 +15,7 @@ public class FlowChartManagerTest {
 	public void DeveExibirTotalDeCreditosInicial() {
 		csflow = new FlowChartManager();
 		assertEquals(1, csflow.getPeriodoAtual(), 0);
-		assertEquals(24, csflow.getTotalDeCreditos(), 0);
+		assertEquals((int) 24, csflow.getTotalDeCreditos(1), 0);
 	}
 	
 	@Test
