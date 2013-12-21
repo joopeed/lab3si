@@ -7,6 +7,7 @@ public class Disciplina {
 	private String nome;
 	private int creditos;
 	private ArrayList<Disciplina> preRequisitos;
+	private String id;
 	
 	public String getNome() {
 		return nome;
@@ -17,6 +18,14 @@ public class Disciplina {
 	}
 
 	
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public int getCreditos() {
 		return creditos;
@@ -34,10 +43,11 @@ public class Disciplina {
 		this.preRequisitos = preRequisitos;
 	}
 
-	public Disciplina(String nome, int creditos, ArrayList<Disciplina> preRequisitos) {
+	public Disciplina(String nome, int creditos, ArrayList<Disciplina> preRequisitos, String id) {
 		this.nome = nome;
 		this.creditos = creditos;
 		this.preRequisitos = preRequisitos;
+		this.id= id;
 	}
 	
 	@Override
