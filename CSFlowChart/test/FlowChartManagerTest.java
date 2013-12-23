@@ -13,18 +13,31 @@ public class FlowChartManagerTest {
 	FlowChartManager csflow;
 	PrimeiroPeriodo periodo1;
 	PeriodoRegular periodo2;
+	Disciplina prog2;
 	
 	@Before
 	public void setUp(){
 		csflow = new FlowChartManager();
-		periodo1 = new PrimeiroPeriodo();
-		periodo2 = new PeriodoRegular();
+		periodo1=new PrimeiroPeriodo();
+		periodo2= new PeriodoRegular();
+		
+		ArrayList<Disciplina> requisitosProg2 = new ArrayList<Disciplina>();
+		requisitosProg2.add(new Disciplina("Programação I",4, new ArrayList<Disciplina>() , "1"));
+		requisitosProg2.add(new Disciplina("Laboratório de Programação I",4, new ArrayList<Disciplina>() , "2"));
+		requisitosProg2.add(new Disciplina("Introdução à Computação",4, new ArrayList<Disciplina>() , "3"));
+		prog2 = new Disciplina("Programação II", 4, requisitosProg2, "4");
+		PeriodoRegular periodo = new PeriodoRegular();
+		periodo.AdicionaDisciplina(prog2);
+		csflow.adicionaPeriodo(periodo);
+		
+		
+		
 	}
 	
 	@Test
 	public void DeveExibirTotalDeCreditosInicial() {
 		
-		assertEquals(1, csflow.getPeriodoAtual(), 0);
+		
 		assertEquals((int) 24, csflow.getTotalDeCreditos(1), 0);
 	}
 	
@@ -61,6 +74,24 @@ public class FlowChartManagerTest {
 		
 		assertEquals(esperadas, periodo2.getDisciplinas());
 	}
+	
+	@Test
+	public void deveVerificarQueONumeroDeCreditosNaoEhSuficiente(){
+
+		assertFalse(csflow.verificaMinimoDeCreditosDoPeriodoAtual(1));
+		
+	}
+	
+//	@Test
+//	public void testaDisciplinasDisponiveis(){
+//		
+//		Catalogo catalogo2 = new Catalogo();
+//		ArrayList<Disciplina> disponiveis = catalogo2.getDisciplinas();
+//		disponiveis.remove(prog2);
+//		assertEquals(disponiveis, csflow.getDisciplinasDisponiveis());		
+//	}
+//	
+	
 }
 
 
