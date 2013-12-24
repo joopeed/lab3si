@@ -1,6 +1,12 @@
 package models;
  
 import java.util.ArrayList;
+
+/**
+ * Classe responsável pela criação do catálogo de disciplinas do curso
+ * @author Ana Luiza, Fellype e João Pedro
+ *
+ */
  
 public class Catalogo {
  
