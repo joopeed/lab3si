@@ -32,7 +32,7 @@ public class Application extends Controller {
     	try {
     	manager.removeDisciplina(id, periodo);
     	} catch (Exception e){
-    		redirect(routes.Application.planejando(e.getMessage()));
+    		return redirect(routes.Application.planejando(e.getMessage()));
         
     	}
     	return redirect(routes.Application.planejando(""));

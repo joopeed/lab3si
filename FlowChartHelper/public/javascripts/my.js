@@ -9,6 +9,8 @@ function drag(ev){
 }
 function dismiss(){
 	document.getElementById('alerta').style.visibility = "hidden"
+	
+	document.location.href = "/planejando"
 }
 
 function retorna(event, id, periodo){

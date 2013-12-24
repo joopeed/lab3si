@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class PrimeiroPeriodo extends Periodo {
 	
 	public PrimeiroPeriodo() {
-		
 		ArrayList<Disciplina> preRequisitos = new ArrayList<Disciplina>(); 	
 		//Vazio. Sem Pre-requisitos para as disciplinas de primeiro período
 		
@@ -17,7 +16,6 @@ public class PrimeiroPeriodo extends Periodo {
 		disciplinas.add(new Disciplina("Introdução à Computação", 4, preRequisitos,"41"));
 		disciplinas.add(new Disciplina("Laboratório de Programação I", 4, preRequisitos,"40"));
 	}
-
 
 
 	@Override

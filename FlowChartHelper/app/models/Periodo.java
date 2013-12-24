@@ -75,11 +75,14 @@ public abstract class Periodo {
 	 * @param preRequisito
 	 * @throws Exception
 	 */
-	public void removeDisciplinaSemRequisito(Disciplina preRequisito) throws Exception {
+	public ArrayList<Disciplina> removeDisciplinaSemRequisito(Disciplina preRequisito) throws Exception {
+		ArrayList<Disciplina> removidas = new ArrayList<Disciplina>();
 		for(Disciplina disciplina: disciplinas) 
-			if(disciplina.getPreRequisitos().contains(preRequisito)) 
+			if(disciplina.getPreRequisitos().contains(preRequisito)) {
 				removeDisciplina(disciplina);
-		
+				removidas.add(disciplina);
+			}
+		return removidas;
 	}
 	
 	

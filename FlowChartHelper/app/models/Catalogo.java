@@ -7,8 +7,7 @@ import java.util.ArrayList;
  * @author Ana Luiza, Fellype e João Pedro
  *
  */
- 
-public class Catalogo {
+ public class Catalogo {
  
     private ArrayList<Disciplina> disciplinas;
     private ArrayList<Disciplina> requisitosP2;
@@ -53,7 +52,14 @@ public class Catalogo {
 	}
 
 	private void preencheDisciplinas() {
-		disciplinas.add(new Disciplina("Cálculo Diferencial e Integral II", 4, requisitosCalc2, "1"));
+		disciplinas.add(new Disciplina("Cálculo Diferencial e Integral I", 4, new ArrayList<Disciplina>(),"41"));
+		disciplinas.add(new Disciplina("Álgebra Vetorial e Geometria Analítica", 4, new ArrayList<Disciplina>(),"42"));
+		disciplinas.add(new Disciplina("Leitura e Produção de Textos", 4, new ArrayList<Disciplina>(),"0"));
+		disciplinas.add(new Disciplina("Programação I", 4, new ArrayList<Disciplina>(),"39"));
+		disciplinas.add(new Disciplina("Introdução à Computação", 4, new ArrayList<Disciplina>(),"41"));
+		disciplinas.add(new Disciplina("Laboratório de Programação I", 4, new ArrayList<Disciplina>(),"40"));
+		
+		  disciplinas.add(new Disciplina("Cálculo Diferencial e Integral II", 4, requisitosCalc2, "1"));
           disciplinas.add(new Disciplina("Matemática Discreta", 4, new ArrayList<Disciplina>(), "2"));
           disciplinas.add(new Disciplina("Fundamentos de Física Clássica", 4, requisitosFisClassica, "3"));
           disciplinas.add(new Disciplina("Programação II", 4, requisitosP2, "4"));

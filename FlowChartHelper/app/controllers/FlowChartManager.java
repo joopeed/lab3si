@@ -15,7 +15,7 @@ import models.PrimeiroPeriodo;
  * 
  * Classe responsável por ser o sistema da aplicação.
  * 
- * @author Ana Luiza Motta Gomes, Fellype Cavalcante e João Pedro Ferrira
+ * @author Ana Luiza Motta Gomes, Fellype Cavalcante e João Pedro Ferreira
  *
  */
 public class FlowChartManager {
@@ -154,11 +154,13 @@ public class FlowChartManager {
 	 * @throws Exception
 	 */
 	public void removePreRequisitos(Disciplina disciplina, int periodo) throws Exception {
+			ArrayList<Disciplina> removidas = new ArrayList<Disciplina>();
 			for(int i = periodo -1 ; i < periodos.size(); i++){
-				periodos.get(i).removeDisciplinaSemRequisito(disciplina);
-				
+				removidas.addAll(periodos.get(i).removeDisciplinaSemRequisito(disciplina));
 			}
+			for(Disciplina removida: removidas) removePreRequisitos(removida, periodo);
 	}
+	
 	/**
 	 * Retorna a lista de disciplinas disponíveis, ou seja, as do catálogo menos as que já foram alocadas
 	 * @return lista de disciplinas disponíveis

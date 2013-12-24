@@ -82,15 +82,6 @@ public class FlowChartManagerTest {
 		
 	}
 	
-//	@Test
-//	public void testaDisciplinasDisponiveis(){
-//		
-//		Catalogo catalogo2 = new Catalogo();
-//		ArrayList<Disciplina> disponiveis = catalogo2.getDisciplinas();
-//		disponiveis.remove(prog2);
-//		assertEquals(disponiveis, csflow.getDisciplinasDisponiveis());		
-//	}
-//	
 	
 }
 
