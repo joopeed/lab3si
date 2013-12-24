@@ -37,6 +37,10 @@ public class FlowChartManager {
 	
 	public int getTotalDePeriodos(){ return periodos.size(); } 
 	
+	public int getCreditos(int periodo) {
+		return periodos.get(periodo -1).getTotalDeCreditos();
+	}
+	
 	public void adicionaPeriodo(){
 		//CREATOR: O Manager é feito de disciplinas e as usa.
 		if(getTotalDePeriodos() > 0)
