@@ -107,7 +107,7 @@ public class FlowChartManager {
 	 * @return número de créditos 
 	 */
 	public int verificaQuantosCreditosFaltaNoPeriodo(int periodo){
-		return plano.verificaMinimoDeCreditosDoPeriodo(periodo);
+		return plano.verificaQuantosCreditosFaltaNoPeriodo(periodo);
 			
 	}
 	/**
@@ -117,7 +117,7 @@ public class FlowChartManager {
 	 * @return true se os pré-requisitos foram cumpridos e false se não
 	 */
 	public boolean verificaPreRequisitos(Disciplina disciplina, int periodo){
-		plano.verificaPreRequisitos(disciplina, periodo);
+		return plano.verificaPreRequisitos(disciplina, periodo);
 	}
 	/**
 	 * Verifica se uma determinada disciplina já foi cursada em determinado período
@@ -126,7 +126,7 @@ public class FlowChartManager {
 	 * @return true se já foi cursada e false se ainda não foi
 	 */
 	public boolean jaExisteNosPeriodosAnteriores(Disciplina disciplina, int periodo){
-		plano.jaExisteNosPeriodosAnteriores(disciplina, periodo);
+		return plano.jaExisteNosPeriodosAnteriores(disciplina, periodo);
 	}
 	/**
 	 * Remove os pré requisitos de uma disciplina
