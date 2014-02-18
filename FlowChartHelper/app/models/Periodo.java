@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public abstract class Periodo {
 
-	ArrayList<Disciplina> disciplinas; //CREATOR: Periodo é feito de disciplinas
+	ArrayList<Disciplina> disciplinas; 
 	/**
 	 * Construtor do Período
 	 */

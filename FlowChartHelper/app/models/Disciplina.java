@@ -75,20 +75,19 @@ public class Disciplina {
 	 * @param preRequisitos pré-requisios da Disciplina
 	 */
 	
-	public void setPreRequisitos(ArrayList<Disciplina> preRequisitos) {
-		this.preRequisitos = preRequisitos;
+	public void addPreRequisitos(Disciplina preRequisito) {
+		this.preRequisitos.add(preRequisito);
 	}
 /**
  * Construtor da Disciplina
  * @param nome Nome da Disciplina
  * @param creditos Número de créditos da Disciplina
- * @param preRequisitos Pré-requisitos da Disciplina
  * @param id 
  */
-	public Disciplina(String nome, int creditos, ArrayList<Disciplina> preRequisitos, String id) {
+	public Disciplina(String nome, int creditos, String id) {
 		this.nome = nome;
 		this.creditos = creditos;
-		this.preRequisitos = preRequisitos;
+		this.preRequisitos = new ArrayList<Disciplina>();
 		this.id = id;
 	}
 	
