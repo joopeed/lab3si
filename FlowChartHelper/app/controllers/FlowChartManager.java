@@ -28,7 +28,7 @@ public class FlowChartManager {
 	 * @throws IOException 
 	 */
 
-	public FlowChartManager() throws IOException {
+	public FlowChartManager() {
 		//INICIALIZANDO O FLOWCHART
 		adicionaPeriodo();
 	}
