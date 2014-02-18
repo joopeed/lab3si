@@ -7,6 +7,7 @@ public class Disciplina {
 	private String nome;
 	private int creditos;
 	private ArrayList<Disciplina> preRequisitos;
+	private ArrayList<Disciplina> dependentes;
 	private String id;
 	
 	/**
@@ -75,7 +76,7 @@ public class Disciplina {
 	 * @param preRequisitos pré-requisios da Disciplina
 	 */
 	
-	public void addPreRequisitos(Disciplina preRequisito) {
+	public void addPreRequisito(Disciplina preRequisito) {
 		this.preRequisitos.add(preRequisito);
 	}
 /**
@@ -88,6 +89,7 @@ public class Disciplina {
 		this.nome = nome;
 		this.creditos = creditos;
 		this.preRequisitos = new ArrayList<Disciplina>();
+		this.dependentes = new ArrayList<Disciplina>();
 		this.id = id;
 	}
 	
@@ -98,7 +100,18 @@ public class Disciplina {
 	@Override
 	public boolean equals(Object outra) {
 		if(outra instanceof Disciplina){
-			return id.equals(((Disciplina) outra).getId());} else return false;
+			return id.equals(((Disciplina) outra).getId());} 
+		else {
+				return false;
+			}
+	}
+
+	public ArrayList<Disciplina> getDependentes() {
+		return dependentes;
+	}
+
+	public void addDependente(Disciplina dependente) {
+		this.dependentes.add(dependente);
 	}
 
 }

@@ -5,16 +5,12 @@ import java.util.ArrayList;
 public class PrimeiroPeriodo extends Periodo {
 	
 	public PrimeiroPeriodo() {
-		ArrayList<Disciplina> preRequisitos = new ArrayList<Disciplina>(); 	
-		//Vazio. Sem Pre-requisitos para as disciplinas de primeiro período
-		
-
-		disciplinas.add(new Disciplina("Cálculo Diferencial e Integral I", 4, "41"));
-		disciplinas.add(new Disciplina("Álgebra Vetorial e Geometria Analítica", 4, "42"));
-		disciplinas.add(new Disciplina("Leitura e Produção de Textos", 4, "0"));
-		disciplinas.add(new Disciplina("Programação I", 4, "39"));
-		disciplinas.add(new Disciplina("Introdução à Computação", 4, "41"));
-		disciplinas.add(new Disciplina("Laboratório de Programação I", 4, "40"));
+		disciplinas.add(new Disciplina("Cálculo Diferencial e Integral I", 4, "0"));
+		disciplinas.add(new Disciplina("Álgebra Vetorial e Geometria Analítica", 4, "1"));
+		disciplinas.add(new Disciplina("Leitura e Produção de Textos", 4, "2"));
+		disciplinas.add(new Disciplina("Programação I", 4, "3"));
+		disciplinas.add(new Disciplina("Introdução à Computação", 4, "4"));
+		disciplinas.add(new Disciplina("Laboratório de Programação I", 4, "5"));
 	}
 
 

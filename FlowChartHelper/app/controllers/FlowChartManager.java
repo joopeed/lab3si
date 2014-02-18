@@ -116,33 +116,8 @@ public class FlowChartManager {
 		return plano.verificaQuantosCreditosFaltaNoPeriodo(periodo);
 			
 	}
-	/**
-	 * Verifica se ao alocar uma disciplina, todos os seus pré-requisitos foram cursados 
-	 * @param disciplina
-	 * @param periodo
-	 * @return true se os pré-requisitos foram cumpridos e false se não
-	 */
-	public boolean verificaPreRequisitos(Disciplina disciplina, int periodo){
-		return plano.verificaPreRequisitos(disciplina, periodo);
-	}
-	/**
-	 * Verifica se uma determinada disciplina já foi cursada em determinado período
-	 * @param disciplina
-	 * @param periodo
-	 * @return true se já foi cursada e false se ainda não foi
-	 */
-	public boolean jaExisteNosPeriodosAnteriores(Disciplina disciplina, int periodo){
-		return plano.jaExisteNosPeriodosAnteriores(disciplina, periodo);
-	}
-	/**
-	 * Remove os pré requisitos de uma disciplina
-	 * @param disciplina
-	 * @param periodo
-	 * @throws Exception
-	 */
-	public void removePreRequisitos(Disciplina disciplina, int periodo) throws Exception {
-			plano.removePreRequisitos(disciplina, periodo);
-	}
+	
+	
 	
 	/**
 	 * Retorna a lista de disciplinas disponíveis, ou seja, as do catálogo menos as que já foram alocadas

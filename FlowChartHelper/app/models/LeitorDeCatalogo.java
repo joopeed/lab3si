@@ -17,19 +17,45 @@ public class LeitorDeCatalogo {
 		while (reader.ready()) {
 			String[] info = reader.readLine().split(" -> ");
 			
-			String nome = info[0];
-			String creditos = info[2];
-			String id = info[3];
+			String nome = info[0].trim();
+			String creditos = info[2].trim();
+			String id = info[3].trim();
 
 			disciplinas.add(new Disciplina(nome, Integer.parseInt(creditos), id));
 		}
 		reader.close();
-		preencheDependentes();
+		
+		preencheDependentes(disciplinas);
 	}
 
+	private static Disciplina buscaDisciplina(List<Disciplina> disciplinas, String nome) {
+		for(Disciplina disciplina: disciplinas) {
+			if (disciplina.getNome().equals(nome))
+				return disciplina;
+		}
+		return null;
+	}
 	
-	
-	private static void preencheDependentes() {
-		//FELLYPE FAZER
+	private static void preencheDependentes(List<Disciplina> disciplinas) throws IOException {
+		String caminho = new File("resources/catalogo.txt").getCanonicalPath();
+		BufferedReader reader = new BufferedReader(new FileReader(new File(caminho)));
+
+		while (reader.ready()) {
+			String[] info = reader.readLine().split(" -> ");
+			String[] dependentes = info[0].split(",");
+			String nome = info[0].trim();
+			Disciplina disciplinaAtual = buscaDisciplina(disciplinas, nome);
+			
+			for (String dependente: dependentes) {
+				if (dependente.trim().equals("null")) {
+					break;
+				}
+				Disciplina dependencia = buscaDisciplina(disciplinas, dependente.trim());
+				disciplinaAtual.addDependente(dependencia);
+				dependencia.addPreRequisito(disciplinaAtual);
+			}
+			
+		}
+		reader.close();
 	}
 }
