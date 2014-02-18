@@ -30,6 +30,12 @@ public class FlowChartManager {
 
 	public FlowChartManager() {
 		//INICIALIZANDO O FLOWCHART
+		try {
+			plano = new Plano();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		adicionaPeriodo();
 	}
 
