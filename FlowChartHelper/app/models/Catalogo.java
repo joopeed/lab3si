@@ -12,9 +12,14 @@ import java.util.ArrayList;
  
     private ArrayList<Disciplina> disciplinas;
     
-	public Catalogo() throws IOException{
+	public Catalogo(){
 		  disciplinas = new ArrayList<Disciplina>();
-		  LeitorDeCatalogo.preencheCatalogo(disciplinas);
+		  try {
+			LeitorDeCatalogo.preencheCatalogo(disciplinas);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
           
 	}
 

@@ -17,11 +17,11 @@ public class PrimeiroPeriodo extends Periodo {
 
 	@Override
 	public void adicionaDisciplina(Disciplina disciplina) throws Exception {
-		throw new NaoPodeAdicionarDisciplinaException(); //PERIODO IMUTAVEL
+		throw new PeriodoImutavelException("Não é possível adicionar disciplinas ao primeiro período"); //PERIODO IMUTAVEL
 	}
 	@Override
 	public void removeDisciplina(Disciplina disciplina) throws Exception {
-		throw new NaoPodeRemoverDisciplinaException(); //PERIODO IMUTAVEL
+		throw new PeriodoImutavelException("Não é possível remover disciplinas ao primeiro período"); //PERIODO IMUTAVEL
 	}
 
 

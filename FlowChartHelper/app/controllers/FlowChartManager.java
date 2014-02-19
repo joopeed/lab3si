@@ -7,7 +7,6 @@ import java.util.List;
 import models.Catalogo;
 import models.Disciplina;
 import models.FaltaPreRequisitoException;
-import models.NaoPodeAdicionarDisciplinaException;
 import models.Periodo;
 import models.PeriodoRegular;
 import models.Plano;
@@ -29,9 +28,9 @@ public class FlowChartManager {
 	 * @throws IOException 
 	 */
 
-	public FlowChartManager() throws Exception {
+	public FlowChartManager() {
 		//INICIALIZANDO O FLOWCHART
-			plano = new Plano();
+		plano = new Plano();
 		
 	}
 

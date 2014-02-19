@@ -11,7 +11,7 @@ public class Plano {
 	private Catalogo catalogo;
 	private ArrayList<Periodo> periodos;
 	
-	public Plano() throws Exception {
+	public Plano() {
 		catalogo = new Catalogo(); //CREATOR: o Plano é quem mais usa o Catalogo
 		periodos = new ArrayList<Periodo>(); // CREATOR: o Plano é feito de periodos
 		inicializaPrimeiroPeriodo();
@@ -19,7 +19,7 @@ public class Plano {
 	}
 	
 	
-	private void inicializaPrimeiroPeriodo() throws Exception {
+	private void inicializaPrimeiroPeriodo() {
 		List<Disciplina> iniciais = new ArrayList<Disciplina>();
 		for(Integer i = 0; i < 6; i++){
 			iniciais.add(catalogo.get(i.toString()));

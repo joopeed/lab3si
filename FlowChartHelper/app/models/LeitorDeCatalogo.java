@@ -56,7 +56,7 @@ public class LeitorDeCatalogo {
 					disciplinaAtual.addDependente(dependencia);
 				}
 					
-				//dependencia.addPreRequisito(disciplinaAtual);
+				
 			}
 			
 		}

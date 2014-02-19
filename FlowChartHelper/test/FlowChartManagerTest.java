@@ -69,6 +69,11 @@ public class FlowChartManagerTest {
 			}
 		}
 		csflow.adicionaDisciplina("6", 2);
+		 csflow.getDisciplinas(2);
+		 for(int i = 0; i < csflow.getDisciplinas(2).size(); i++) {
+				System.out.println("AAAAAAAAAAAAA" + csflow.getDisciplinas(2).get(i).getNome());
+				
+			}
 		assertTrue(esperadas.get(0).equals(atuais.get(0)));
 		//assertTrue(esperadas.get(1).equals(atuais.get(1)));
 		assertTrue(esperadas.get(2).equals(atuais.get(2)));
