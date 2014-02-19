@@ -109,11 +109,15 @@ public class Plano {
 		
 		for(Disciplina dependente: disciplina.getDependentes()) {
 			for(int i = periodo -1 ; i < periodos.size(); i++){
+				ArrayList<Disciplina> aRemover = new ArrayList<Disciplina>();
 				for(Disciplina disciplinaSuspeita: periodos.get(i).getDisciplinas()){
 					if(disciplinaSuspeita.equals(dependente)) {
-						periodos.get(i).removeDisciplina(disciplinaSuspeita);
+						aRemover.add(disciplinaSuspeita);
 						removeDependentes(dependente, i+1);
 					}
+				}
+				for(Disciplina remover: aRemover){
+					periodos.get(i).removeDisciplina(remover);
 				}
 			}
 			

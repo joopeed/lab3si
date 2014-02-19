@@ -18,7 +18,7 @@ public class FlowChartManagerTest {
 	@Before
 	public void setUp() throws Exception{
 		csflow = new FlowChartManager();
-		periodo1=new PrimeiroPeriodo();
+		periodo1= new PrimeiroPeriodo();
 		periodo2= new PeriodoRegular();
 
 		ArrayList<Disciplina> requisitosProg2 = new ArrayList<Disciplina>();
@@ -100,9 +100,24 @@ public class FlowChartManagerTest {
 
 	@Test
 	public void deveVerificarQueONumeroDeCreditosNaoEhSuficiente(){
-
 		assertFalse(csflow.verificaMinimoDeCreditosDoPeriodo(1));
 
+	}
+	
+	
+	@Test
+	public void deveAdicionarDisciplina() throws Exception{
+		csflow.adicionaPeriodo();
+		assertTrue(csflow.getDisciplinas(1).contains(new Disciplina("Cálculo Diferencial e Integral I", 4, "0")));
+		csflow.adicionaDisciplina("6", 2);
+		assertTrue(csflow.getDisciplinas(2).contains(new Disciplina("Cálculo Diferencial e Integral II", 4, "6")));
+		csflow.adicionaPeriodo();
+		csflow.adicionaDisciplina("14", 3);
+		assertTrue(csflow.getDisciplinas(3).contains(new Disciplina("Probabilidade e Estatística", 4, "14")));
+		csflow.removeDisciplina("6", 2);
+		assertFalse(csflow.getDisciplinas(2).contains(new Disciplina("Cálculo Diferencial e Integral II", 4, "6")));
+		assertFalse(csflow.getDisciplinas(3).contains(new Disciplina("Probabilidade e Estatística", 4, "14")));
+		
 	}
 
 
