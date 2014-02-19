@@ -2,6 +2,7 @@ package models;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Plano {
@@ -10,12 +11,23 @@ public class Plano {
 	private Catalogo catalogo;
 	private ArrayList<Periodo> periodos;
 	
-	public Plano() throws IOException {
+	public Plano() throws Exception {
 		catalogo = new Catalogo(); //CREATOR: o Plano é quem mais usa o Catalogo
 		periodos = new ArrayList<Periodo>(); // CREATOR: o Plano é feito de periodos
+		inicializaPrimeiroPeriodo();
+		
 	}
 	
 	
+	private void inicializaPrimeiroPeriodo() throws Exception {
+		List<Disciplina> iniciais = new ArrayList<Disciplina>();
+		for(Integer i = 0; i < 6; i++){
+			iniciais.add(catalogo.get(i.toString()));
+		}
+		adicionaPeriodo(iniciais);
+	}
+
+
 	public int getTotalDeCreditos(int periodo) {
 		//INFORMATION EXPERT: O periodo deve responder isso, ele possui disciplinas
 		return periodos.get(periodo - 1).getTotalDeCreditos(); 
@@ -34,11 +46,19 @@ public class Plano {
 		return periodos.get(periodo -1).getTotalDeCreditos();
 	}
 	
+	public void adicionaPeriodo(List<Disciplina> iniciais){
+		periodos.add(new PrimeiroPeriodo(iniciais));
+			
+	}
+	
 	public void adicionaPeriodo(){
-		if(getTotalDePeriodos() > 0)
+		if(getTotalDePeriodos() > 0) {
 			periodos.add(new PeriodoRegular());
-		else 
+		}
+		else {
 			periodos.add(new PrimeiroPeriodo());
+		}
+			
 	}
 	
 	public void adicionaDisciplina(String id, int periodo) throws Exception {

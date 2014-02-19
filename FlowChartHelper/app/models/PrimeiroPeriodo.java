@@ -1,16 +1,17 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PrimeiroPeriodo extends Periodo {
 	
+	public PrimeiroPeriodo(List<Disciplina> iniciais) {
+		disciplinas.addAll(iniciais);
+	}
+
+
 	public PrimeiroPeriodo() {
-		disciplinas.add(new Disciplina("Cálculo Diferencial e Integral I", 4, "0"));
-		disciplinas.add(new Disciplina("Álgebra Vetorial e Geometria Analítica", 4, "1"));
-		disciplinas.add(new Disciplina("Leitura e Produção de Textos", 4, "2"));
-		disciplinas.add(new Disciplina("Programação I", 4, "3"));
-		disciplinas.add(new Disciplina("Introdução à Computação", 4, "4"));
-		disciplinas.add(new Disciplina("Laboratório de Programação I", 4, "5"));
+		
 	}
 
 

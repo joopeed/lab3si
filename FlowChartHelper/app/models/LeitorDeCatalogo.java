@@ -15,7 +15,7 @@ public class LeitorDeCatalogo {
 		BufferedReader reader = new BufferedReader(new FileReader(new File(caminho)));
 
 		while (reader.ready()) {
-			String[] info = reader.readLine().split(" -> ");
+			String[] info = reader.readLine().split("->");
 			
 			String nome = info[0].trim();
 			String creditos = info[2].trim();
@@ -30,7 +30,7 @@ public class LeitorDeCatalogo {
 
 	private static Disciplina buscaDisciplina(List<Disciplina> disciplinas, String nome) {
 		for(Disciplina disciplina: disciplinas) {
-			if (disciplina.getNome().equals(nome))
+			if (disciplina.getNome().trim().equals(nome.trim()))
 				return disciplina;
 		}
 		return null;
@@ -41,8 +41,8 @@ public class LeitorDeCatalogo {
 		BufferedReader reader = new BufferedReader(new FileReader(new File(caminho)));
 
 		while (reader.ready()) {
-			String[] info = reader.readLine().split(" -> ");
-			String[] dependentes = info[0].split(",");
+			String[] info = reader.readLine().split("->");
+			String[] dependentes = info[1].split(",");
 			String nome = info[0].trim();
 			Disciplina disciplinaAtual = buscaDisciplina(disciplinas, nome);
 			
@@ -50,9 +50,13 @@ public class LeitorDeCatalogo {
 				if (dependente.trim().equals("null")) {
 					break;
 				}
+				
 				Disciplina dependencia = buscaDisciplina(disciplinas, dependente.trim());
-				disciplinaAtual.addDependente(dependencia);
-				dependencia.addPreRequisito(disciplinaAtual);
+				if(dependencia != null){
+					disciplinaAtual.addDependente(dependencia);
+				}
+					
+				//dependencia.addPreRequisito(disciplinaAtual);
 			}
 			
 		}

@@ -25,18 +25,14 @@ public class FlowChartManager {
 	private Plano plano;
 	/**
 	 * Construtor do controller
+	 * @throws Exception 
 	 * @throws IOException 
 	 */
 
-	public FlowChartManager() {
+	public FlowChartManager() throws Exception {
 		//INICIALIZANDO O FLOWCHART
-		try {
 			plano = new Plano();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		adicionaPeriodo();
+		
 	}
 
 	/**

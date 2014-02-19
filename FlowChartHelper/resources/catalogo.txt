@@ -6,7 +6,7 @@ Introdução à Computação -> Programação II, Laboratório de Programação 
 Laboratório de Programação I -> Programação II, Laboratório de Programação II, Teoria dos Grafos -> 4 -> 5
 Cálculo Diferencial e Integral II -> Análise e Técnicas de Algoritmos, Probabilidade e Estatística, Fundamentos de Física Moderna -> 4 -> 6
 Programação II -> Estruturas de Dados e Algoritmos, Laboratório de Estruturas de Dados e Algoritmos, Engenharia de software I -> 4 -> 7
-Laboratório de programação II -> Estruturas de Dados e Algoritmos, Laboratório de Estruturas de Dados e Algoritmos, Engenharia de software I -> 4 -> 8
+Laboratório de Programação II -> Estruturas de Dados e Algoritmos, Laboratório de Estruturas de Dados e Algoritmos, Engenharia de software I -> 4 -> 8
 Teoria dos Grafos -> Estruturas de Dados e Algoritmos, Laboratório de Estruturas de Dados e Algoritmos, Teoria da Computação -> 2 -> 9
 Matemática Discreta -> Teoria da Computação -> 4 -> 10
 Metodologia Científica -> Projeto em Computação i -> 4 -> 11

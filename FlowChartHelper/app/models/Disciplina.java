@@ -112,6 +112,7 @@ public class Disciplina {
 
 	public void addDependente(Disciplina dependente) {
 		this.dependentes.add(dependente);
+		dependente.addPreRequisito(this);
 	}
 
 }
