@@ -106,23 +106,23 @@ public class Plano {
 		return false;
 	}
 	public void removeDependentes(Disciplina disciplina, int periodo) throws Exception {
- 
-  		for(Disciplina dependente: disciplina.getDependentes()) {
-  			for(int i = periodo -1 ; i < periodos.size(); i++){
- 				ArrayList<Disciplina> aRemover = new ArrayList<Disciplina>();
-  				for(Disciplina disciplinaSuspeita: periodos.get(i).getDisciplinas()){
-  					if(disciplinaSuspeita.equals(dependente)) {
- 						aRemover.add(disciplinaSuspeita);
-  						removeDependentes(dependente, i+1);
-  					}
-  				}
- 				for(Disciplina remover: aRemover){
- 					periodos.get(i).removeDisciplina(remover);
- 				}
-  			}
-  			
-  		}
-  	}
+		
+		for(Disciplina dependente: disciplina.getDependentes()) {
+			for(int i = periodo -1 ; i < periodos.size(); i++){
+				ArrayList<Disciplina> aRemover = new ArrayList<Disciplina>();
+				for(Disciplina disciplinaSuspeita: periodos.get(i).getDisciplinas()){
+					if(disciplinaSuspeita.equals(dependente)) {
+						aRemover.add(disciplinaSuspeita);
+						removeDependentes(dependente, i+1);
+					}
+				}
+				for(Disciplina remover: aRemover){
+					periodos.get(i).removeDisciplina(remover);
+				}
+			}
+			
+		}
+	}
 	public ArrayList<Disciplina> getDisciplinasDisponiveis(){
 		//INFORMATION EXPERT: O Plano é o unico que o catalogo e as alocadas ao mesmo tempo
 		ArrayList<Disciplina> disciplinasDisponiveis = new ArrayList<Disciplina>();
